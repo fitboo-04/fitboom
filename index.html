@@ -5,86 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FitBoom - De Tudo pra Academia</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Estilo do modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    .modal-content h2 {
+      margin-top: 0;
+    }
+    .close {
+      float: right;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .modal-content form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .modal-content input, .modal-content select, .modal-content button {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .modal-content button {
+      background: #28a745;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+    .produto-nome {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>FitBoom</h1>
-    <nav>
-      <a href="#categorias">Categorias</a>
-      <a href="#avaliacoes">Avaliações</a>
-      <a href="#blog">Blog</a>
-      <a href="#promocoes">Promoções</a>
-      <a href="#contato">Contato</a>
-    </nav>
   </header>
-
-  <section class="banner">
-    <h2>De Tudo pra Academia</h2>
-    <button>Conheça todos os produtos</button>
-  </section>
 
   <section id="categorias" class="categorias">
     <h2>Categorias</h2>
     <div class="produtos">
-      <div class="produto">Halteres - R$ 199,99 <button>Comprar</button></div>
-      <div class="produto">Máquinas - R$ 1.299,99 <button>Comprar</button></div>
-      <div class="produto">Roupas Fitness - R$ 99,99 <button>Comprar</button></div>
-      <div class="produto">Suplementos - R$ 79,99 <button>Comprar</button></div>
+      <div class="produto">Halteres - R$ 199,99 <button class="btn-comprar">Comprar</button></div>
+      <div class="produto">Máquinas - R$ 1.299,99 <button class="btn-comprar">Comprar</button></div>
+      <div class="produto">Roupas Fitness - R$ 99,99 <button class="btn-comprar">Comprar</button></div>
+      <div class="produto">Suplementos - R$ 79,99 <button class="btn-comprar">Comprar</button></div>
     </div>
   </section>
 
-  <section id="avaliacoes" class="avaliacoes">
-    <h2>Avaliações</h2>
-    <p>⭐⭐⭐⭐⭐ Paulo: Ótimo produto e entrega rápida!</p>
-    <p>⭐⭐⭐⭐ Maria: Bom custo-benefício.</p>
-  </section>
+  <!-- Modal -->
+  <div id="modalCompra" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Finalizar Compra</h2>
+      <p class="produto-nome" id="produtoSelecionado"></p>
+      <form>
+        <label>Endereço de Entrega:
+          <input type="text" required>
 
-  <section id="blog" class="blog">
-    <h2>Blog</h2>
-    <article>10 Dicas para hipertrofia muscular</article>
-    <article>Alimentação para performance</article>
-    <article>Treino para ganho de massa</article>
-  </section>
 
-  <section id="promocoes" class="promocoes">
-    <h2>Ofertas Relâmpago</h2>
-    <p>Black Friday FitBoom - até 50% OFF</p>
-    <button>Comprar Agora</button>
-  </section>
-
-  <section class="fidelidade">
-    <h2>Programa de Fidelidade</h2>
-    <p>Ganhe pontos a cada compra e troque por descontos.</p>
-  </section>
-
-  <section class="instagram">
-    <h2>Instagram</h2>
-    <p>Integração com feed do Instagram aqui.</p>
-  </section>
-
-  <section id="checkout" class="checkout">
-    <h2>Checkout</h2>
-    <form>
-      <label>Nome: <input type="text" required></label>
-      <label>Email: <input type="email" required></label>
-      <label>Endereço de Entrega: <input type="text" required></label>
-      <h3>Forma de Pagamento</h3>
-      <select required>
-        <option value="">Selecione</option>
-        <option>Cartão de Crédito</option>
-        <option>Pix</option>
-        <option>Boleto</option>
-        <option>Mercado Pago</option>
-      </select>
-      <h3>Cupom de Desconto</h3>
-      <input type="text" placeholder="Digite seu cupom">
-      <button type="submit">Finalizar Compra</button>
-    </form>
-  </section>
-
-  <footer id="contato">
-    <p>FitBoom © 2025 - Todos os direitos reservados.</p>
-    <p>Email: contato@fitboom.com.br</p>
-  </footer>
-</body>
-</html>
